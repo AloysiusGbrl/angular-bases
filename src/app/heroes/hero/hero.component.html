@@ -1,0 +1,35 @@
+<!--    ---Interpolación:  conciste en colocar entre dos pares de llaves {{}}, el nombre de la variable que deseemos mostrar -->
+<h1>{{name}}</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{name}}</dd>
+
+  <td>Edad:</td>
+  <dd>{{age}}</dd>
+
+  <td>Método:</td>
+  <dd>{{getHeroDescription()}}</dd>
+
+  <td>Capitalizado:</td>
+  <dd>{{capitalizedName}}</dd>
+</dl>
+
+<!--Directivas ngIf (angular if) -->
+<button
+*ngIf="name!=='Aloysius'"
+(click)="changeHero()"
+class="btn btn-primary mx-2">
+  Cambiar Nombre
+</button>
+
+<button
+*ngIf="age!==25"
+(click)="changeAge()"class="btn btn-primary">
+  Cambiar edad
+</button>
+
+<button
+(click)="restForm()"class="btn btn-primary mx-2">
+  Reset Form
+</button>
