@@ -1,0 +1,43 @@
+<h4>Listado</h4>
+    <ul class="list-group">
+      <li
+      *ngFor="let character of characterList;
+        let i=index;
+        let isFirst=first;
+        let isLast=last;
+        let isEven=even
+        let isOdd=odd"
+      class="list-group-item d-flex justify-content-between align-items-center"
+      [ngClass]="{
+        'list-group-item-dark':isLast,
+        'list-group-item-primary':isEven
+      }">
+
+      <div>
+        <span class="text-primary">{{i +1}}.</span>
+        <span>{{character.name}} - </span>
+        <strong>Power: </strong>
+        <span>{{character.power}}</span>
+      </div>
+
+      <button
+      (click)="onDeleteCharacter(character.id)"
+      class="btn btn-danger">X</button>
+
+      <!--                                    Más funcionalidades con NgFor                                                    -->
+
+      <!--    --- Uso el ngFor para saber cual es el primer item del grupo -->
+      <!--<span>Es el primero: {{i===0}} / </span> //Está bien pero hay otro modo más corto-->
+      <!--<span>Es el primero: {{isFirst}} / </span>-->
+
+      <!--    --- Uso el ngFor para saber cual es el último item del grupo -->
+      <!--<span>Es el ultmimo: {{i=== characterList.length - 1}}</span> //Está bien pero hay otro modo más corto-->
+      <!--<span>Es el ultmimo: {{isLast}} / </span>-->
+
+      <!--    --- Uso el ngFor para saber si el número del índice es un número par-->
+      <!--<span>Es par: {{isEven}} / </span>-->
+
+      <!--    --- Uso el ngFor para saber si el número del índice es un número impar-->
+      <!--<span>Es impar: {{isOdd}}</span>-->
+      </li>
+    </ul>

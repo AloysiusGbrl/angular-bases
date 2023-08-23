@@ -1,0 +1,19 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- Mando mis chacarters por medio de characterList a list.component.ts -->
+    <!--escucho el evento emitido de list.component.ts para mandar como evento a mi mainpage.component.tz-->
+    <bdz-list
+    [characterList]="characters"
+    (onDelete)="onDeleteCharacter($event)"></bdz-list>
+
+  </div>
+
+  <div class="col">
+
+    <!--Necesito hacer que el padre escuche los eventos del hijo para propagar los cambios componente principaltc5-->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+  </div>
+</div>
